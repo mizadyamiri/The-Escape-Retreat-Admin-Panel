@@ -1,5 +1,5 @@
 import { formatDistance, parseISO } from "date-fns";
-import { differenceInDays } from "date-fns/esm";
+import { differenceInDays } from "date-fns";
 
 export const subtractDates = (dateStr1: string | Date, dateStr2: string | Date): number => {
   const parsedDate1 = typeof dateStr1 === "string" ? parseISO(dateStr1) : dateStr1;
