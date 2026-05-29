@@ -19,7 +19,7 @@ const Button = styled.button`
 function App() {
   return (
     <div>
-      <H1>The Escape Retreat</H1>
+      <H1>DIRECT PUSH TO MASTER</H1>
       <Button>Check in</Button>
     </div>
   );
