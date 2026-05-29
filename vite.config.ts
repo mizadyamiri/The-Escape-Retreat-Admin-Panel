@@ -10,4 +10,5 @@ export default defineConfig({
       },
     }),
   ],
+  base: "/The-Escape-Retreat-Admin-Panel/",
 });
