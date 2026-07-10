@@ -1,6 +1,15 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["vite", "pnpm", "Supabase"],
-  "ignorePaths": ["dist", "node_modules", "pnpm-lock.yaml"]
+  "words": [
+    "pnpm",
+    "Sono",
+    "Supabase",
+    "vite"
+  ],
+  "ignorePaths": [
+    "dist",
+    "node_modules",
+    "pnpm-lock.yaml"
+  ]
 }
