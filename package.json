@@ -14,7 +14,8 @@
     "format:check": "prettier . --check",
     "spell": "cspell .",
     "test": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "release": "pnpm version --message \"chore(release): v%s\""
   },
   "dependencies": {
     "date-fns": "^4.3.0",
