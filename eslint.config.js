@@ -19,5 +19,21 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      "no-console": [
+        "error",
+        {
+          allow: ["warn", "error"],
+        },
+      ],
+
+      "no-warning-comments": [
+        "error",
+        {
+          terms: ["todo", "fixme"],
+          location: "anywhere",
+        },
+      ],
+    },
   },
 ]);
