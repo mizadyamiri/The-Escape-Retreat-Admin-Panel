@@ -2,13 +2,13 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [
     react({
       babel: {
-        plugins: [["babel-plugin-react-compiler"]],
+        plugins: ["babel-plugin-react-compiler"],
       },
     }),
   ],
-  base: "/The-Escape-Retreat-Admin-Panel/",
-});
+  base: command === "build" ? "/escape-retreat-admin/" : "/",
+}));

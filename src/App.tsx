@@ -1,45 +1,33 @@
-import styled from "styled-components";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router";
+import Dashboard from "./pages/Dashboard";
+import Cabins from "./pages/Cabins";
+import PageNotFound from "./pages/PageNotFound";
+import Login from "./pages/Login";
+import Account from "./pages/Account";
+import Settings from "./pages/Settings";
+import Users from "./pages/Users";
 import GlobalStyles from "./styles/GlobalStyles";
-import Button from "./ui/Button";
-import Input from "./ui/Input";
-import Heading from "./ui/Heading";
-import Row from "./ui/Row";
+import { ROUTE_PATHS } from "./constants/routes";
 
-const StyledApp = styled.main`
-  padding: 20px;
-`;
+const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
 
-function App() {
+export default function App() {
   return (
     <>
       <GlobalStyles />
-      <StyledApp>
-        <Row>
-          <Row $direction="horizontal">
-            <Heading as="h1">the escape retreat</Heading>
 
-            <div>
-              <Heading as="h2">Check in and out</Heading>
-
-              <Button>Check in</Button>
-              <Button $variant="danger" $size="small">
-                Check out
-              </Button>
-            </div>
-          </Row>
-
-          <Row>
-            <Heading as="h3">form</Heading>
-
-            <form>
-              <Input type="number" placeholder="Number of guests" />
-              <Input type="number" placeholder="Number of guests" />
-            </form>
-          </Row>
-        </Row>
-      </StyledApp>
+      <BrowserRouter basename={basename}>
+        <Routes>
+          <Route index element={<Navigate replace to={ROUTE_PATHS.dashboard.root} />} />
+          <Route path={ROUTE_PATHS.dashboard.root} element={<Dashboard />} />
+          <Route path={ROUTE_PATHS.cabins.root} element={<Cabins />} />
+          <Route path={ROUTE_PATHS.users.root} element={<Users />} />
+          <Route path={ROUTE_PATHS.settings.root} element={<Settings />} />
+          <Route path={ROUTE_PATHS.account.root} element={<Account />} />
+          <Route path={ROUTE_PATHS.login.root} element={<Login />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
-
-export default App;
