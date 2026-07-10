@@ -1,27 +1,44 @@
 import styled from "styled-components";
+import GlobalStyles from "./styles/GlobalStyles";
+import Button from "./ui/Button";
+import Input from "./ui/Input";
+import Heading from "./ui/Heading";
+import Row from "./ui/Row";
 
-const H1 = styled.h1`
-  font-size: 30px;
-  font-weight: 600;
-  background-color: yellow;
-`;
-
-const Button = styled.button`
-  font-size: 1.4rem;
-  padding: 1.2rem 1.6rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 7px;
-  background-color: purple;
-  color: white;
+const StyledApp = styled.main`
+  padding: 20px;
 `;
 
 function App() {
   return (
-    <div>
-      <H1>the escape retreat</H1>
-      <Button>Check in</Button>
-    </div>
+    <>
+      <GlobalStyles />
+      <StyledApp>
+        <Row>
+          <Row $direction="horizontal">
+            <Heading as="h1">the escape retreat</Heading>
+
+            <div>
+              <Heading as="h2">Check in and out</Heading>
+
+              <Button>Check in</Button>
+              <Button $variant="danger" $size="small">
+                Check out
+              </Button>
+            </div>
+          </Row>
+
+          <Row>
+            <Heading as="h3">form</Heading>
+
+            <form>
+              <Input type="number" placeholder="Number of guests" />
+              <Input type="number" placeholder="Number of guests" />
+            </form>
+          </Row>
+        </Row>
+      </StyledApp>
+    </>
   );
 }
 
