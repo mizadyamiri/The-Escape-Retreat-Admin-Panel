@@ -1,7 +1,7 @@
 {
   "name": "the-escape-retreat-admin-panel",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,12 +14,15 @@
     "format:check": "prettier . --check",
     "spell": "cspell .",
     "test": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "release": "pnpm version --message \"chore(release): v%s\""
   },
   "dependencies": {
     "date-fns": "^4.3.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-icons": "^5.7.0",
+    "react-router": "^8.2.0",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
@@ -60,5 +63,6 @@
       "prettier --write",
       "cspell --no-must-find-files"
     ]
-  }
+  },
+  "packageManager": "pnpm@11.11.0+sha512.4463f65fd80ed80d69bc1d4bf163ee94f605c7380fc318bb5b2ebe15f8cd12d49c51a4d59e951b401e764d3b6ca751cbf51bc50ed7001a6bcb4935e684c34882"
 }

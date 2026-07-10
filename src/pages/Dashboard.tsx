@@ -1,9 +1,9 @@
-import Heading from "../ui/Heading";
-import Row from "../ui/Row";
+import Heading from "../components/Heading";
+import Row from "../components/Row";
 
 function Dashboard() {
   return (
-    <Row type="horizontal">
+    <Row $direction="horizontal">
       <Heading as="h1">Dashboard</Heading>
       <p>TEST</p>
     </Row>

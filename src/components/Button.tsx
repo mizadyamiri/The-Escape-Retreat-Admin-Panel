@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const sizes = {
+const sizeStyles = {
   small: css`
     font-size: 1.2rem;
     padding: 0.4rem 0.8rem;
@@ -20,7 +20,7 @@ const sizes = {
   `,
 };
 
-const variations = {
+const variantStyles = {
   primary: css`
     color: var(--color-brand-50);
     background-color: var(--color-brand-600);
@@ -31,7 +31,7 @@ const variations = {
   `,
   secondary: css`
     color: var(--color-grey-600);
-    background: var(--color-grey-0);
+    background-color: var(--color-grey-0);
     border: 1px solid var(--color-grey-200);
 
     &:hover {
@@ -47,3 +47,31 @@ const variations = {
     }
   `,
 };
+
+type ButtonSize = keyof typeof sizeStyles;
+type ButtonVariant = keyof typeof variantStyles;
+
+interface ButtonProps {
+  $size?: ButtonSize;
+  $variant?: ButtonVariant;
+}
+
+const DEFAULT_SIZE: ButtonSize = "medium";
+const DEFAULT_VARIANT: ButtonVariant = "primary";
+
+const Button = styled.button<ButtonProps>`
+  border: none;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+
+  ${({ $size = DEFAULT_SIZE }) => sizeStyles[$size]}
+  ${({ $variant = DEFAULT_VARIANT }) => variantStyles[$variant]}
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+`;
+
+export default Button;
